@@ -9,9 +9,9 @@ SEED = 42 #
 N_EXEMPLARS_PER_CONCEPT = 40
 SEQUENCE_RUNS = {"A": 30, "B": 20, "C": 10} # how many runs per sequence overall 
 BLOCK_ORDER = [("A", 10), ("A", 10), ("B", 10), ("A", 10), ("B", 10), ("C", 10)] # sequence, n_repetitions
-POSITION_KEYS = {"left": "y", "center": "b", "right": "r"} # map image positions to response keys 
+POSITION_KEYS = {"left": "left", "center": "center", "right": "right"} # map image positions to response keys 
 concepts = [
-    "berry","bicycle","bird","box","bug","car","chair","coffee","dog","face","fish",
+    "berry","bicycle","bird","box","bug","car","chair","coffee","dog","book","fish",
     "guitar","hammer","hand","house","jacket","pencil","phone","pizza","plane","tree"
 ]
 base_name = "main_conditions" # root filename without ppt index
@@ -432,7 +432,7 @@ if __name__ == "__main__":
 
     ap = argparse.ArgumentParser()
     ap.add_argument("--n_participants", type=int, default=30)
-    ap.add_argument("--out_dir", default="c:\sync_folder\Study 1 - MEG replay\Experiment\learning-replay-MEG-task\sequences")
+    ap.add_argument("--out_dir", default=r"c:\sync_folder\TSRlearn-task\sequences")
     args = ap.parse_args()
 
     base_name = "main_conditions"

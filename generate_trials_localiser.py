@@ -17,7 +17,7 @@ SEED = 7 # seed for first participant, might be better to randomise
 N_EXEMPLARS_PER_CONCEPT = 40
 MISMATCH_RATIO = 0.20 # ratio of word-image mismatch pairs 
 concepts = [
-    "bug","berry","bicycle","bird","box","car","chair","coffee","dog","face","fish",
+    "bug","berry","bicycle","bird","box","car","chair","coffee","dog","book","fish",
     "guitar","hammer","hand","house","jacket","pencil","phone","pizza","plane","tree"
 ]
 left_key = "g" # key to choose the option presented on the left 
@@ -28,9 +28,9 @@ screen_positions = ["left", "right"] # positions on the screen with response opt
 folder_name_map = {c: c for c in concepts}
 german_map = {
     "bug":"Käfer","berry":"Beere","bicycle":"Fahrrad","bird":"Vogel","box":"Kiste",
-    "car":"Auto","chair":"Stuhl", "coffee":"Kaffee","dog":"Hund","face":"Gesicht","fish":"Fisch",
+    "car":"Auto","chair":"Stuhl", "coffee":"Kaffee","dog":"Hund","book":"Buch","fish":"Fisch",
     "guitar":"Gitarre","hammer":"Hammer","hand":"Hand","house":"Haus","jacket":"Jacke",
-    "pencil":"Bleistift","phone":"Handy","pizza":"Pizza","plane":"Flugzeug","tree":"Baum",
+    "pencil":"Stift","phone":"Telefon","pizza":"Pizza","plane":"Flugzeug","tree":"Baum",
 } # map english to german words
 
 MAX_ATTEMPTS = 5000 # max. attempts to build trial list that matches constraints
@@ -41,8 +41,12 @@ MAX_ATTEMPTS = 5000 # max. attempts to build trial list that matches constraints
 # constraint 01: not more than x identical concepts in a row (for words and images)
 MAX_STREAK = 1 
 
-# constraint 02: per-concept mismatches 
-PER_CONCEPT_MISMATCH = int(MISMATCH_RATIO * N_EXEMPLARS_PER_CONCEPT)
+# constraint 02: prompt the participant to indicate if wrd-img map o every 5th trial on average
+# so we have total_trials / 5 = 168 prompt trials
+# every concept has 168/21 = 8 prompts 
+prompt_interval = 5
+number_prompt_trials = int(N_EXEMPLARS_PER_CONCEPT*len(concepts)) / prompt_interval
+per_concept_prompt = int(number_prompt_trials / len(concepts))
 
 # constraint 03: try to spread the exemplars of one concept evenly 
 target_per_quartile = N_EXEMPLARS_PER_CONCEPT // 4  
@@ -50,7 +54,8 @@ target_per_quartile = N_EXEMPLARS_PER_CONCEPT // 4
 # constraint 04: make sure not always same images get paired with same words on mismatch trials
 
 # constraint 05: make sure mismatches are equally enough distributed
-MISMATCH_PER_QUARTILE = int(round((PER_CONCEPT_MISMATCH*len(concepts)) // 4))
+per_concept_mismatch = int(N_EXEMPLARS_PER_CONCEPT*MISMATCH_RATIO)
+MISMATCH_PER_QUARTILE = int(round((per_concept_mismatch*len(concepts)) // 4))
 QUARTILE_TOL = 3  # allow deviation
 
 # constraint 06 (in case key-resp mappings change during the experiment): 
@@ -89,104 +94,154 @@ def build_valid_schedule(trials: List[Dict],
                          rng: random.Random,
                          max_attempts: int,
                          max_streak: int,
-                         n_exemplars_per_concept: int):
+                         n_exemplars_per_concept: int,
+                         quartile_tol: int = 0,
+                         max_prompt_streak: int = 3):
     """
     Enforces:
       - MAX_STREAK for concepts & words (constraint 01)
       - exemplar spreading: each concept ~ evenly per quartile (constraint 03)
+      - prompts ~ evenly across 4 quartiles
+      - no more than max_prompt_streak prompts in a row
     """
     total = len(trials)
+    if total == 0:
+        return []
 
-    # constraint 03, spread concepts evenly across quartiles 
-    # build dict with concept names and 4-slot counter of occurrence per quartile 
-    counts_quartile = {c: [0, 0, 0, 0] for c in [t["concept"] for t in trials][::n_exemplars_per_concept]}
-    
-    # loop over max constraints
+    # For overall concept occurrences (each concept appears n_exemplars_per_concept times)
+    overall_target_per_q = {}
+    for c in concepts:
+        base = n_exemplars_per_concept // 4
+        rem  = n_exemplars_per_concept % 4
+        # distribute remainder to the first 'rem' quartiles
+        overall_target_per_q[c] = [base + (1 if q < rem else 0) for q in range(4)]
+
+    # For per-concept PROMPTs (count how many prompt trials each concept has)
+    prompt_count_by_concept = {c: 0 for c in concepts}
+    for t in trials:
+        if t.get("is_prompt", 0) == 1:
+            prompt_count_by_concept[t["concept"]] += 1
+
+    prompt_target_per_q = {}
+    for c in concepts:
+        tot_prompts = prompt_count_by_concept[c]
+        base = tot_prompts // 4
+        rem  = tot_prompts % 4
+        prompt_target_per_q[c] = [base + (1 if q < rem else 0) for q in range(4)]
+
+    # do the same as above but for mismatches
+    mismatch_count_by_concept = {c: 0 for c in concepts}
+    for t in trials:
+        if t.get("is_mismatch", 0) == 1:
+                mismatch_count_by_concept [t["concept"]] += 1
+
+    mismatch_target_per_q = {}
+    for c in concepts:
+        tot_mismatches = mismatch_count_by_concept[c]
+        base = tot_mismatches // 4
+        rem  = tot_mismatches % 4
+        mismatch_target_per_q[c] = [base + (1 if q < rem else 0) for q in range(4)]
+
+    # attempt to build a schedule
     for _ in range(max_attempts):
         remaining = trials[:]
         rng.shuffle(remaining)
         schedule = []
 
-        # store items from previous trials to avoid repeats 
+        # streak trackers
         last_concepts = deque(maxlen=max_streak)
         last_words    = deque(maxlen=max_streak)
 
-        # reset quartile counters
-        for c in counts_quartile:
-            counts_quartile[c] = [0,0,0,0]
-
-        # constraint 05, spread mismatches evenly across quartiles 
-        # build 4-slot counter of occurrence per quartile 
-        counts_mismatch_quartile = [0, 0, 0, 0]
+        # per-quartile counters for what we've scheduled so far
+        overall_counts_q =  {c: [0, 0, 0, 0] for c in concepts}
+        prompt_counts_q  =  {c: [0, 0, 0, 0] for c in concepts}
+        mismatch_counts_q = {c: [0, 0, 0, 0] for c in concepts}
+        prompt_streak = 0 
 
         ok = True
-        # loop over trials 
-        for i in range(total):
         
+        for i in range(total):
+            # inline of _quartile_of_index(i, total):
+            # split the index range [0..total-1] into 4 bins
+            q = (i * 4) // total   # 0..3
+
             rng.shuffle(remaining)
             picked_idx = None
 
-            # try to pick the next trial that fits all constraints
             for idx, cand in enumerate(remaining):
-
                 c = cand["concept"]
                 w = cand["word_shown_english"]
-                is_mismatch = (cand["match_idx"] == 0)     
+                is_prompt = (cand.get("is_prompt", 0) == 1)
+                is_mismatch = (cand.get("is_mismatch", 0) == 1)
 
-                # constraint 01: concept & word streaks
-                cs = 1
-                for pc in reversed(last_concepts):
-                    if pc == c: cs += 1
+                # prompt-streak cap
+                if is_prompt and prompt_streak >= max_prompt_streak:
+                    continue
+
+                # (1) concept streak
+                c_streak = 1
+                for prev_c in reversed(last_concepts):
+                    if prev_c == c:
+                        c_streak += 1
                     else:
-                        break 
-                if cs > max_streak:
-                    continue # try next item in list 
-
-                ws = 1
-                for pw in reversed(last_words):
-                    if pw == w: ws += 1
-                    else: break
-                if ws > max_streak:
+                        break
+                if c_streak > max_streak:
                     continue
 
-                # constraint 03 quartile spreading: compute quartile and enforce even spread of concepts
-                q = (i * 4) // total  # which quartile are we on (0-3)?
-                if counts_quartile[c][q] >= target_per_quartile:
+                # (2) word streak
+                w_streak = 1
+                for prev_w in reversed(last_words):
+                    if prev_w == w:
+                        w_streak += 1
+                    else:
+                        break
+                if w_streak > max_streak:
                     continue
 
-                # constraint 05: mismatches spread evenly across quartiles 
-                if is_mismatch and counts_mismatch_quartile[q] >= (MISMATCH_PER_QUARTILE + QUARTILE_TOL):
-                    continue 
-                
+                # (3) overall concept quartile target
+                if overall_counts_q[c][q] >= overall_target_per_q[c][q] + quartile_tol:
+                    continue
 
-                # passed all checks
+                # (4) prompt quartile target (only if this is a prompt)
+                if is_prompt:
+                    if prompt_counts_q[c][q] >= prompt_target_per_q[c][q] + quartile_tol:
+                        continue
+
+                # (5) mismatches equally distributed 
+                if is_mismatch:
+                    if mismatch_counts_q[c][q] >= mismatch_target_per_q[c][q] + quartile_tol:
+                        continue
+
+                # passed all constraints
                 picked_idx = idx
                 break
 
             if picked_idx is None:
                 ok = False
                 break
-                
-            # remove item from remaining and add to trial lisr
+
+            # place item and update trackers
             item = remaining.pop(picked_idx)
             schedule.append(item)
 
-            # update trackers
             last_concepts.append(item["concept"])
             last_words.append(item["word_shown_english"])
-            
-            q = (i * 4) // total
-            counts_quartile[item["concept"]][q] += 1
 
-            if is_mismatch:
-                counts_mismatch_quartile[q] += 1
+            overall_counts_q[item["concept"]][q] += 1
+            if item.get("is_prompt", 0) == 1:
+                prompt_counts_q[item["concept"]][q] += 1
+                prompt_streak += 1          
+            else:
+                prompt_streak = 0    
+                  
+            if item.get("is_mismatch", 0) == 1:
+                mismatch_counts_q[item["concept"]][q] += 1
 
-        # schedule built
         if ok and not remaining:
             return schedule
 
+    # give up
     return []
-
 
 # --- main function: build base trial list
 
@@ -203,15 +258,26 @@ def main(out_xlsx=base_name, seed=SEED):
             trials.append({"concept": c, "image_shown": img, "concept_num": concept_to_num[c]})
     total = len(trials)
 
-    # get indices for mismatches 
-    mismatch_index_by_concept = {c: set() for c in concepts}
+    # get indices for prompt trials  
+    prompt_index_by_concept = {c: set() for c in concepts}
 
-    # constraint 02: mismatch quota per concept 
+    # constraint 02: prompt quota per concept 
     for c in concepts:
-        # pick which exemplar indices (1..40) for this concept will be mismatches
+        # pick which exemplar indices (1..40) for this concept will be prompted
         idxs = list(range(1, N_EXEMPLARS_PER_CONCEPT+1))
         rng.shuffle(idxs)
-        mismatch_index_by_concept[c] = set(idxs[:PER_CONCEPT_MISMATCH])
+        # pick from randomly shuffled indices which ones to prompt 
+        prompt_ids = idxs[:per_concept_prompt]                 # e.g., 8 out of 40
+        prompt_index_by_concept[c] = set(prompt_ids)
+
+    mismatch_index_by_concept = {}
+    mismatches_per_concept = int(round(MISMATCH_RATIO * N_EXEMPLARS_PER_CONCEPT))
+    
+    for c in concepts:
+        idxs = list(range(1, N_EXEMPLARS_PER_CONCEPT+1))
+        rng.shuffle(idxs)
+        mismatch_ids = set(idxs[:mismatches_per_concept])  # 8 exemplar IDs for this concept
+        mismatch_index_by_concept[c] = mismatch_ids
 
     # assign words to images to create mismatches 
     enriched = []
@@ -224,20 +290,30 @@ def main(out_xlsx=base_name, seed=SEED):
         # parse exemplar id from the file path (.._XX.jpg)
         ex_str = base["image_shown"].split("_")[-1].split(".")[0]
         ex_id = int(ex_str)
-        is_mismatch = 1 if ex_id in mismatch_index_by_concept[c] else 0  # 1=mismatch here
-        # match_idx: 1 for match, 0 for mismatch.
+
+        prompt_idx = 1 if ex_id in prompt_index_by_concept[c] else 0
+        is_mismatch = 1 if ex_id in mismatch_index_by_concept[c] else 0
+
         match_idx = 0 if is_mismatch == 1 else 1
 
-        w_en = c if match_idx == 1 else pick_nonmatching_word(c, used_mismatches, rng)
-        w_de = german_map[w_en]
+        # Choose the word
+        if match_idx == 1:
+            w_en = c
+        else:
+            w_en = pick_nonmatching_word(c, used_mismatches, rng)
+        try:
+            w_de = german_map[w_en]
+        except KeyError:
+            raise KeyError(f"german_map missing entry for '{w_en}' (concept '{c}', exemplar {ex_id})")
+
         enriched.append({
             **base,
+            "is_prompt": prompt_idx,      # keep legacy key if used elsewhere
+            "prompt_idx": prompt_idx,     # explicit export
+            "match_idx": match_idx,       # 1=match, 0=mismatch (independent of prompt)
             "word_shown_english": w_en,
             "word_shown_german": w_de,
-            "match_idx": match_idx
         })
-
-        n_mismatch = sum(1 for trial in enriched if trial["match_idx"] == 0)
         
     # try building schedule
     sched = build_valid_schedule(
@@ -245,9 +321,14 @@ def main(out_xlsx=base_name, seed=SEED):
         rng=rng,
         max_attempts=MAX_ATTEMPTS,
         max_streak=MAX_STREAK,
-        n_exemplars_per_concept=N_EXEMPLARS_PER_CONCEPT
+        n_exemplars_per_concept=N_EXEMPLARS_PER_CONCEPT,
+        quartile_tol=QUARTILE_TOL
     )
-
+    if not sched:
+        raise RuntimeError(
+        "build_valid_schedule() returned no trials. "
+        "Try increasing MAX_ATTEMPTS or relaxing constraints (e.g., quartile_tol=1)."
+    )
     # add ITI and response_side mapping 
     rows = []
     correct_button_storage = deque(maxlen=MAX_STREAK_COR_KEY)
@@ -279,22 +360,26 @@ def main(out_xlsx=base_name, seed=SEED):
 
         # append missing rows 
         rows.append({
+            "concept": t["concept"],
+            "concept_num": t["concept_num"],
             "image_shown": t["image_shown"],
             "word_shown_english": t["word_shown_english"],
             "word_shown_german": t["word_shown_german"],
+            "prompt_idx": t["prompt_idx"],        
+            "match_idx": int(t["match_idx"]),          
             "ITI_length": round(iti, 2),
             "correct_response": resp,
-            "match_idx": t["match_idx"],
-            "concept_num": t["concept_num"],
-            "nonmatch_pres_side": nonmatch_pres_side
+            "nonmatch_pres_side": nonmatch_pres_side,
         })
 
     # to df 
     df = pd.DataFrame(rows)
-        
+    
+    n_mismatch = int((df["match_idx"] == 0).sum())
+    n_prompts = int(df["prompt_idx"].sum())
     # export
     df.to_excel(out_xlsx, index=False)
-    print(f"Wrote {out_xlsx} with {len(df)} trials, {n_mismatch} mismatches).")
+    print(f"Wrote {out_xlsx} with {len(df)} trials, prompts={n_prompts}, mismatches={n_mismatch}.")
 
 
 if __name__ == "__main__":
@@ -302,7 +387,7 @@ if __name__ == "__main__":
 
     ap = argparse.ArgumentParser()
     ap.add_argument("--n_participants", type=int, default=30)
-    ap.add_argument("--out_dir", default = r"c:\sync_folder\TSRlearn\Experiment\sequences") 
+    ap.add_argument("--out_dir", default = r"c:\sync_folder\TSRlearn-task\sequences") 
     args = ap.parse_args()
 
     base_name = "localiser_conditions"

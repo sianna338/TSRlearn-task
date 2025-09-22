@@ -198,3 +198,5 @@ learning-replay-main_legacy.psyexp
 learning-replay-localiser_lastrun.py
 learning-replay-localiser_legacy.psyexp
 
+*.tsv#
+*.tsv
