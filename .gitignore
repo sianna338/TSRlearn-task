@@ -200,3 +200,9 @@ learning-replay-localiser_legacy.psyexp
 
 *.tsv#
 *.tsv
+learning-replay-localiser-audioversion_lastrun.py
+learning-replay-localiser-audioversion_lastrun.py
+learning-replay-localiser-audioversion_legacy.psyexp
+localiser_pilot.py
+meg_triggers/__init__.py
+meg_triggers/__version__.py

@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" ?>
-<PsychoPy2experiment encoding="utf-8" version="2024.2.4">
+<PsychoPy2experiment encoding="utf-8" version="2025.1.1">
   <Settings>
     <Param val="3" valType="str" updates="None" name="Audio latency priority"/>
-    <Param val="pygame" valType="str" updates="None" name="Audio lib"/>
+    <Param val="ptb" valType="str" updates="None" name="Audio lib"/>
     <Param val="" valType="str" updates="None" name="Completed URL"/>
     <Param val="comma" valType="str" updates="None" name="Data file delimiter"/>
     <Param val="u'data/%s_%s_%s' % (expInfo['participant'], expName, expInfo['date'])" valType="code" updates="None" name="Data filename"/>
     <Param val="True" valType="bool" updates="None" name="Enable Escape"/>
     <Param val="Thank you for your patience." valType="str" updates="None" name="End Message"/>
-    <Param val="{'participant': '0'}" valType="code" updates="None" name="Experiment info"/>
+    <Param val="{'participant': '00'}" valType="code" updates="None" name="Experiment info"/>
     <Param val="True" valType="bool" updates="None" name="Force stereo"/>
     <Param val="True" valType="bool" updates="None" name="Full-screen window"/>
     <Param val="" valType="str" updates="None" name="HTML path"/>
@@ -25,8 +25,8 @@
     <Param val="True" valType="bool" updates="None" name="Show info dlg"/>
     <Param val="False" valType="bool" updates="None" name="Show mouse"/>
     <Param val="height" valType="str" updates="None" name="Units"/>
-    <Param val="2024.2.4" valType="str" updates="None" name="Use version"/>
-    <Param val="[2048, 1152]" valType="list" updates="None" name="Window size (pixels)"/>
+    <Param val="2025" valType="str" updates="None" name="Use version"/>
+    <Param val="[1920, 1080]" valType="list" updates="None" name="Window size (pixels)"/>
     <Param val="none" valType="str" updates="None" name="backgroundFit"/>
     <Param val="" valType="str" updates="None" name="backgroundImg"/>
     <Param val="avg" valType="str" updates="None" name="blendMode"/>
@@ -47,13 +47,14 @@
     <Param val="RIGHT_EYE" valType="str" updates="None" name="elTrackEyes"/>
     <Param val="PUPIL_CR_TRACKING" valType="str" updates="None" name="elTrackingMode"/>
     <Param val="localiser_pilot" valType="str" updates="None" name="expName"/>
+    <Param val="" valType="str" updates="None" name="expVersion"/>
     <Param val="on Sync" valType="str" updates="None" name="exportHTML"/>
     <Param val="None" valType="str" updates="None" name="eyetracker"/>
     <Param val="" valType="code" updates="None" name="frameRate"/>
     <Param val="Attempting to measure frame rate of screen, please wait..." valType="str" updates="None" name="frameRateMsg"/>
     <Param val="127.0.0.1" valType="str" updates="None" name="gpAddress"/>
     <Param val="4242" valType="num" updates="None" name="gpPort"/>
-    <Param val="ioHub" valType="str" updates="None" name="keyboardBackend"/>
+    <Param val="PsychToolbox" valType="str" updates="None" name="keyboardBackend"/>
     <Param val="exp" valType="code" updates="None" name="logging level"/>
     <Param val="True" valType="bool" updates="None" name="measureFrameRate"/>
     <Param val="('MIDDLE_BUTTON',)" valType="list" updates="None" name="mgBlink"/>
@@ -72,7 +73,7 @@
     <Param val="psychopy_iohub_surface" valType="str" updates="None" name="plSurfaceName"/>
     <Param val="0" valType="code" updates="None" name="runMode"/>
     <Param val="False" valType="bool" updates="None" name="rush"/>
-    <Param val="time" valType="str" updates="None" name="sortColumns"/>
+    <Param val="alphabetical" valType="str" updates="None" name="sortColumns"/>
     <Param val="" valType="str" updates="None" name="tbLicenseFile"/>
     <Param val="" valType="str" updates="None" name="tbModel"/>
     <Param val="60" valType="num" updates="None" name="tbSampleRate"/>
@@ -293,180 +294,6 @@
         <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
-    </Routine>
-    <Routine name="feedback">
-      <RoutineSettingsComponent name="feedback" plugin="None">
-        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
-        <Param val="" valType="str" updates="None" name="backgroundImg"/>
-        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
-        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
-        <Param val="" valType="str" updates="constant" name="desc"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
-        <Param val="feedback" valType="code" updates="None" name="name"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="" valType="code" updates="constant" name="skipIf"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
-      </RoutineSettingsComponent>
-      <CodeComponent name="control_routine_start_2" plugin="None">
-        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="if ((prompt_idx === 0)) {&amp;#10;    continueRoutine = false;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="if prompt_idx==0:&amp;#10;    continueRoutine = False  # skip this routine when not selected" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="control_routine_start_2" valType="code" updates="None" name="name"/>
-      </CodeComponent>
-      <CodeComponent name="bids_feedback_logging" plugin="None">
-        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="# log onset at first frame&amp;#10;bids.schedule_onset(too_slow_msg,&amp;#10;                        block_num = block_num,&amp;#10;                        trial_num = trial_num,&amp;#10;                        type_of_stimulus=&quot;feedback&quot;,&amp;#10;                        component_label=&quot;too_slow&quot;,&amp;#10;                        wrd_img_match = match_idx,&amp;#10;                        concept_label = word_shown)&amp;#10;                        &amp;#10;bids.schedule_onset(match_prompt_fdback,&amp;#10;                        block_num = block_num,&amp;#10;                        trial_num = trial_num,&amp;#10;                        type_of_stimulus=&quot;feedback&quot;,&amp;#10;                        component_label=&quot;too_slow&quot;,&amp;#10;                        wrd_img_match = match_idx,&amp;#10;                        concept_label = word_shown)                                           &amp;#10;" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="bids.schedule_onset(too_slow_msg, {&quot;block_num&quot;: block_num, &quot;trial_num&quot;: trial_num, &quot;type_of_stimulus&quot;: &quot;feedback&quot;, &quot;component_label&quot;: &quot;too_slow&quot;, &quot;wrd_img_match&quot;: match_idx, &quot;concept_label&quot;: word_shown});&amp;#10;bids.schedule_onset(match_prompt_fdback, {&quot;block_num&quot;: block_num, &quot;trial_num&quot;: trial_num, &quot;type_of_stimulus&quot;: &quot;feedback&quot;, &quot;component_label&quot;: &quot;too_slow&quot;, &quot;wrd_img_match&quot;: match_idx, &quot;concept_label&quot;: word_shown});&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="bids.mark_offset(too_slow_msg);&amp;#10;bids.mark_offset(match_prompt_fdback);&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="# add feedback&amp;#10;   &amp;#10;bids.mark_offset(too_slow_msg)&amp;#10;bids.mark_offset(match_prompt_fdback)&amp;#10;&amp;#10;" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="bids_feedback_logging" valType="code" updates="None" name="name"/>
-      </CodeComponent>
-      <TextComponent name="match_prompt_fdback" plugin="None">
-        <Param val="" valType="color" updates="constant" name="color"/>
-        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
-        <Param val="1" valType="num" updates="constant" name="contrast"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="False" valType="code" updates="constant" name="draggable"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="None" valType="str" updates="constant" name="flip"/>
-        <Param val="Arial" valType="str" updates="constant" name="font"/>
-        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
-        <Param val="0.04" valType="num" updates="constant" name="letterHeight"/>
-        <Param val="match_prompt_fdback" valType="code" updates="None" name="name"/>
-        <Param val="" valType="num" updates="constant" name="opacity"/>
-        <Param val="0" valType="num" updates="constant" name="ori"/>
-        <Param val="0,0" valType="list" updates="constant" name="pos"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="0" valType="code" updates="None" name="startVal"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="fdback_dur" valType="code" updates="constant" name="stopVal"/>
-        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="" valType="str" updates="constant" name="text"/>
-        <Param val="from exp settings" valType="str" updates="None" name="units"/>
-        <Param val="" valType="code" updates="None" name="validator"/>
-        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
-      </TextComponent>
-      <CodeComponent name="set_matchprompt_fdback" plugin="None">
-        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="if ((language === &quot;english&quot;)) {&amp;#10;    match_prompt_fdback.text = &quot;match?&quot;;&amp;#10;} else {&amp;#10;    if ((language === &quot;german&quot;)) {&amp;#10;        match_prompt_fdback.text = &quot;richtig?&quot;;&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="&amp;#10;# labels &amp;#10;if language == &quot;english&quot;: &amp;#10;    match_prompt_fdback.text = &quot;match?&quot;&amp;#10;elif language == &quot;german&quot;: &amp;#10;    match_prompt_fdback.text = &quot;richtig?&quot;&amp;#10;    &amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="set_matchprompt_fdback" valType="code" updates="None" name="name"/>
-      </CodeComponent>
-      <CodeComponent name="feedback_control" plugin="None">
-        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="feedback_given = false;&amp;#10;if ((fdback === 1)) {&amp;#10;    console.log(key_resp.corr);&amp;#10;    if ((key_resp.corr === 1)) {&amp;#10;        too_slow_msg.setOpacity(0);&amp;#10;        match_prompt_fdback.setOpacity(1);&amp;#10;        match_prompt_fdback.setColor(&quot;green&quot;, {&quot;colorSpace&quot;: &quot;rgb&quot;});&amp;#10;        feedback_given = true;&amp;#10;    } else {&amp;#10;        if ((key_resp.corr === 0)) {&amp;#10;            too_slow_msg.setOpacity(0);&amp;#10;            match_prompt_fdback.setColor(&quot;red&quot;, {&quot;colorSpace&quot;: &quot;rgb&quot;});&amp;#10;            match_prompt_fdback.setOpacity(1);&amp;#10;            feedback_given = true;&amp;#10;        } else {&amp;#10;            if ((key_resp.corr === &quot;m&quot;)) {&amp;#10;                too_slow_msg.setOpacity(1);&amp;#10;                match_prompt_fdback.setOpacity(0);&amp;#10;                feedback_given = true;&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;} else {&amp;#10;    too_slow_msg.setOpacity(0);&amp;#10;    match_prompt_fdback.setColor(&quot;white&quot;);&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="&amp;#10;# prepare feedback in form of word color change or too slow message&amp;#10;feedback_given = False&amp;#10;&amp;#10;&amp;#10;if fdback == 1: &amp;#10;    print(key_resp.corr)&amp;#10;    if key_resp.corr==1: &amp;#10;        too_slow_msg.setOpacity(0)&amp;#10;        match_prompt_fdback.setOpacity(1)&amp;#10;        match_prompt_fdback.setColor(&quot;green&quot;, colorSpace='rgb')&amp;#10;&amp;#10;        feedback_given = True&amp;#10;&amp;#10;&amp;#10;      &amp;#10;    elif key_resp.corr==0: &amp;#10;        too_slow_msg.setOpacity(0)&amp;#10;&amp;#10;        match_prompt_fdback.setColor(&quot;red&quot;, colorSpace='rgb')&amp;#10;        match_prompt_fdback.setOpacity(1)&amp;#10;&amp;#10;        feedback_given = True&amp;#10;&amp;#10;        &amp;#10;    elif key_resp.corr== &quot;m&quot;: # no respnse &amp;#10;        too_slow_msg.setOpacity(1)&amp;#10;        match_prompt_fdback.setOpacity(0)&amp;#10;&amp;#10;        feedback_given = True&amp;#10;        &amp;#10;else:  # if no feedback is desired&amp;#10;    too_slow_msg.setOpacity(0)&amp;#10;    match_prompt_fdback.setColor(&quot;white&quot;)&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="feedback_control" valType="code" updates="None" name="name"/>
-      </CodeComponent>
-      <TextComponent name="too_slow_msg" plugin="None">
-        <Param val="white" valType="color" updates="constant" name="color"/>
-        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
-        <Param val="1" valType="num" updates="constant" name="contrast"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="False" valType="code" updates="constant" name="draggable"/>
-        <Param val="0.2" valType="code" updates="None" name="durationEstim"/>
-        <Param val="None" valType="str" updates="constant" name="flip"/>
-        <Param val="Arial" valType="str" updates="constant" name="font"/>
-        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
-        <Param val="0.04" valType="num" updates="constant" name="letterHeight"/>
-        <Param val="too_slow_msg" valType="code" updates="None" name="name"/>
-        <Param val="" valType="num" updates="constant" name="opacity"/>
-        <Param val="0" valType="num" updates="constant" name="ori"/>
-        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="0.0" valType="code" updates="None" name="startVal"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="fdback_dur" valType="code" updates="constant" name="stopVal"/>
-        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="" valType="str" updates="constant" name="text"/>
-        <Param val="from exp settings" valType="str" updates="None" name="units"/>
-        <Param val="" valType="code" updates="None" name="validator"/>
-        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
-      </TextComponent>
-      <CodeComponent name="set_too_slow_msg" plugin="None">
-        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="if ((language === &quot;english&quot;)) {&amp;#10;    too_slow_msg.text = &quot;too slow&quot;;&amp;#10;} else {&amp;#10;    if ((language === &quot;german&quot;)) {&amp;#10;        too_slow_msg.text = &quot;zu langsam&quot;;&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="if language == &quot;english&quot;: &amp;#10;    too_slow_msg.text = &quot;too slow&quot;&amp;#10;elif language == &quot;german&quot;: &amp;#10;    too_slow_msg.text = &quot;zu langsam&quot;&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="set_too_slow_msg" valType="code" updates="None" name="name"/>
-      </CodeComponent>
-      <CodeComponent name="feedback_trigger_meg" plugin="None">
-        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="too_slow_msg._trig_sent = false;&amp;#10;match_prompt_fdback._trig_sent = false;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="# initialise&amp;#10;too_slow_msg._trig_sent = False&amp;#10;match_prompt_fdback._trig_sent = False&amp;#10;&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="&amp;#10;stimuli = [&quot;too slow msg&quot;, &quot;feedback&quot;]&amp;#10;stim_objs = [too_slow_msg, match_prompt_fdback]&amp;#10;&amp;#10;for name, obj in zip(stimuli, stim_objs):&amp;#10;    if (&amp;#10;        obj.status == STARTED&amp;#10;        and getattr(obj, &quot;frameNStart&quot;, None) == frameN&amp;#10;        and (getattr(obj, &quot;opacity&quot;, 1) or 0) &gt; 0&amp;#10;        and not getattr(obj, &quot;_trig_sent&quot;, False)&amp;#10;    ):&amp;#10;        # schedule to record onset at the next flip&amp;#10;        win.timeOnFlip(obj, &quot;tStartRefresh&quot;)&amp;#10;        #thisExp.timestampOnFlip(obj, f&quot;{obj.name}.started&quot;)&amp;#10;&amp;#10;        # send trigger on that flip&amp;#10;        trig_num = trigger_numbers_dict[name]&amp;#10;        win.callOnFlip(meg_triggers.send_trigger, trig_num, 0.005)&amp;#10;&amp;#10;        # prevent retriggering&amp;#10;        obj._trig_sent = True&amp;#10;        core.wait(0.01)&amp;#10;" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="Each JS Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="feedback_trigger_meg" valType="code" updates="None" name="name"/>
-      </CodeComponent>
     </Routine>
     <Routine name="instructions_meg">
       <RoutineSettingsComponent name="instructions_meg" plugin="None">
@@ -780,8 +607,8 @@
         <Param val="functions_imports" valType="code" updates="None" name="name"/>
       </CodeComponent>
       <CodeComponent name="exp_settings" plugin="None">
-        <Param val="&amp;#10;## all important task parameters to set ##&amp;#10;&amp;#10;# response prompt positions&amp;#10;possible_prompt_positions = [-0.2, 0.2] # x coordinates&amp;#10;&amp;#10;# duration of image presentation  [s]&amp;#10;image_dur = 1&amp;#10;&amp;#10;# image - word ISI: interval between image and word [s]&amp;#10;img_wrd_isi = 0&amp;#10;&amp;#10;# time to make response [s] &amp;#10;response_time = 1.5&amp;#10;&amp;#10;# left &amp; right response button presentation duration [s]&amp;#10;side_dur = response_time&amp;#10;&amp;#10;# is there feedback or not&amp;#10;fdback = 1 # [0 = no, 1 = yes]&amp;#10;&amp;#10;# feedback duration [s]&amp;#10;fdback_dur = 0.2&amp;#10; &amp;#10;# duration of rest breaks [s]&amp;#10;break_dur = 30&amp;#10;&amp;#10;# interval of the breaks (every x trials)&amp;#10;break_interval = 70&amp;#10;total_block_number = 12&amp;#10;&amp;#10;# trials that you want to prompot on for practice trials&amp;#10;prompting_trials_prc = {0,2,5,6,10}&amp;#10;&amp;#10;# response - key mapping&amp;#10;left_key = 'g'&amp;#10;right_key = 'b'&amp;#10;possible_keys = [left_key, right_key]&amp;#10;&amp;#10;# language for instruction&amp;#10;language = 'english' # 'english' or 'german' &amp;#10;&amp;#10;# match /non-match responses or just non-match&amp;#10;match_responses = 1 # [no &quot;match&quot; responses = 0, &quot;match responses&quot; = 1]&amp;#10;&amp;#10;# switch sides for match / non match mapping&amp;#10;switch_sides = 0 # [no = 0, yes = 1]" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="&amp;#10;## all important task parameters to set ##&amp;#10;&amp;#10;# response prompt positions&amp;#10;possible_prompt_positions = [-0.2, 0.2] # x coordinates&amp;#10;&amp;#10;# duration of image presentation  [s]&amp;#10;image_dur = 0.75&amp;#10;&amp;#10;# image - word ISI: interval between image and word [s]&amp;#10;img_wrd_isi = 0&amp;#10;&amp;#10;# time to make response [s] &amp;#10;response_time = 1.25&amp;#10;&amp;#10;# left &amp; right response button presentation duration [s]&amp;#10;side_dur = response_time&amp;#10;&amp;#10;# is there feedback or not&amp;#10;fdback = 1 # [0 = no, 1 = yes]&amp;#10;&amp;#10;# feedback duration [s]&amp;#10;fdback_dur = 0.2&amp;#10; &amp;#10;# duration of rest breaks [s]&amp;#10;break_dur = 30&amp;#10;&amp;#10;# interval of the breaks (every x trials)&amp;#10;break_interval = 70&amp;#10;total_block_number = 12&amp;#10;&amp;#10;# response - key mapping&amp;#10;left_key = 'g'&amp;#10;right_key = 'b'&amp;#10;possible_keys = [left_key, right_key]&amp;#10;&amp;#10;# language for instruction&amp;#10;language = 'english' # 'english' or 'german' &amp;#10;&amp;#10;# match /non-match responses or just non-match&amp;#10;match_responses = 1 # [no &quot;match&quot; responses = 0, &quot;match responses&quot; = 1]&amp;#10;&amp;#10;# switch sides for match / non match mapping&amp;#10;switch_sides = 0 # [no = 0, yes = 1]" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="possible_prompt_positions = [(- 0.2), 0.2];&amp;#10;image_dur = 0.75;&amp;#10;img_wrd_isi = 0;&amp;#10;response_time = 1.25;&amp;#10;side_dur = response_time;&amp;#10;fdback = 1;&amp;#10;fdback_dur = 0.2;&amp;#10;break_dur = 30;&amp;#10;break_interval = 70;&amp;#10;total_block_number = 12;&amp;#10;left_key = &quot;g&quot;;&amp;#10;right_key = &quot;b&quot;;&amp;#10;possible_keys = [left_key, right_key];&amp;#10;language = &quot;english&quot;;&amp;#10;match_responses = 1;&amp;#10;switch_sides = 0;&amp;#10;" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="&amp;#10;&amp;#10;" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
@@ -1535,13 +1362,13 @@
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
       </RoutineSettingsComponent>
-      <CodeComponent name="set_word_2" plugin="None">
+      <CodeComponent name="set_word" plugin="None">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="if ((language === &quot;english&quot;)) {&amp;#10;    word_shown = word_shown_english;&amp;#10;} else {&amp;#10;    if ((language === &quot;german&quot;)) {&amp;#10;        word_part1 = word_shown_german;&amp;#10;        word_part2 = &quot;_german&quot;;&amp;#10;        word_shown = (word_part1 + word_part2);&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="&amp;#10;&amp;#10;if language == 'english':&amp;#10;    word_shown = (word_shown_english)&amp;#10;    &amp;#10;elif language == 'german':   &amp;#10;    word_part1 = (word_shown_german)&amp;#10;    word_part2 = &quot;_german&quot;&amp;#10;    word_shown = word_part1 + word_part2&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="if ((language === &quot;english&quot;)) {&amp;#10;    part1 = word_shown_english;&amp;#10;    part2 = &quot;_english&quot;;&amp;#10;    word_shown = (part1 + part2);&amp;#10;} else {&amp;#10;    if ((language === &quot;german&quot;)) {&amp;#10;        word_shown = word_shown_german;&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="&amp;#10;&amp;#10;if language == 'english':&amp;#10;    part1 = (word_shown_english)&amp;#10;    part2 = &quot;_english&quot;&amp;#10;    word_shown = part1 + part2&amp;#10;&amp;#10;    &amp;#10;elif language == 'german':   &amp;#10;    word_shown = (word_shown_german)&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -1550,16 +1377,19 @@
         <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="set_word_2" valType="code" updates="None" name="name"/>
+        <Param val="set_word" valType="code" updates="None" name="name"/>
       </CodeComponent>
       <SoundComponent name="spoken_word" plugin="None">
         <Param val="" valType="str" updates="None" name="deviceLabel"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="0.75" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="bool" updates="constant" name="forceEndRoutine"/>
         <Param val="True" valType="bool" updates="constant" name="hamming"/>
+        <Param val="1" valType="code" updates="None" name="latencyClass"/>
         <Param val="spoken_word" valType="code" updates="None" name="name"/>
+        <Param val="False" valType="str" updates="None" name="resample"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="$ &quot;sounds//&quot; + word_shown + &quot;.mp3&quot;" valType="str" updates="set every repeat" name="sound"/>
+        <Param val="$ &quot;sounds//&quot; + word_shown + &quot;.wav&quot;" valType="str" updates="set every repeat" name="sound"/>
         <Param val="-1" valType="code" updates="None" name="speakerIndex"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
@@ -1568,15 +1398,16 @@
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="constant" name="stopWithRoutine"/>
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="1" valType="num" updates="constant" name="volume"/>
       </SoundComponent>
-      <CodeComponent name="word_trigger_meg_2" plugin="None">
+      <CodeComponent name="word_trigger_meg" plugin="None">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="stim = &quot;word presentation&quot;;&amp;#10;number = trigger_numbers_dict[stim];&amp;#10;psychoJS.window.callOnFlip(meg_triggers.send_trigger, number, 0.005);&amp;#10;core.wait(0.01);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="# send trigger &amp;#10;stim = &quot;word presentation&quot;&amp;#10;&amp;#10;number = trigger_numbers_dict[stim]&amp;#10;&amp;#10;win.callOnFlip(meg_triggers.send_trigger, number, 0.005)&amp;#10;core.wait(0.01)&amp;#10;&amp;#10;#meg_triggers.send_trigger(number, 0.005)&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="stim = &quot;word presentation&quot;;&amp;#10;number = trigger_numbers_dict[stim];&amp;#10;psychoJS.window.callOnFlip(meg_triggers.send_trigger, number, 0.005);&amp;#10;core.wait(0.01);&amp;#10;meg_triggers.send_trigger(number, 0.005);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="# send trigger &amp;#10;stim = &quot;word presentation&quot;&amp;#10;&amp;#10;number = trigger_numbers_dict[stim]&amp;#10;&amp;#10;win.callOnFlip(meg_triggers.send_trigger, number, 0.005)&amp;#10;core.wait(0.01)&amp;#10;&amp;#10;meg_triggers.send_trigger(number, 0.005)&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -1585,7 +1416,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="word_trigger_meg_2" valType="code" updates="None" name="name"/>
+        <Param val="word_trigger_meg" valType="code" updates="None" name="name"/>
       </CodeComponent>
       <CodeComponent name="bids_word_logging" plugin="None">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
@@ -1605,12 +1436,12 @@
         <Param val="bids_word_logging" valType="code" updates="None" name="name"/>
       </CodeComponent>
       <TextComponent name="fix_cross" plugin="None">
-        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="1.0000, 1.0000, 1.0000" valType="color" updates="set every repeat" name="color"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="False" valType="code" updates="constant" name="draggable"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="response_time" valType="code" updates="None" name="durationEstim"/>
         <Param val="None" valType="str" updates="constant" name="flip"/>
         <Param val="Arial" valType="str" updates="constant" name="font"/>
         <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
@@ -1624,55 +1455,20 @@
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="response_time" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="+" valType="str" updates="constant" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
-      <CodeComponent name="control_routine_length" plugin="None">
+      <CodeComponent name="set_matchside" plugin="None">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="if spoken_word.status == FINISHED:&amp;#10;    continueRoutine = False" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="if ((spoken_word.status === PsychoJS.Status.FINISHED)) {&amp;#10;    continueRoutine = false;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="control_routine_length" valType="code" updates="None" name="name"/>
-      </CodeComponent>
-    </Routine>
-    <Routine name="settings_main_trial">
-      <RoutineSettingsComponent name="settings_main_trial" plugin="None">
-        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
-        <Param val="" valType="str" updates="None" name="backgroundImg"/>
-        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
-        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
-        <Param val="" valType="str" updates="constant" name="desc"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
-        <Param val="settings_main_trial" valType="code" updates="None" name="name"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="" valType="code" updates="constant" name="skipIf"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
-      </RoutineSettingsComponent>
-      <CodeComponent name="setup_prompting_2" plugin="None">
-        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="#import numpy as np&amp;#10;&amp;#10;#p_prompt = 1/5.0 # on average every 5th trial&amp;#10;#trial_idx = 0&amp;#10;#next_prompt_at = np.random.geometric(p_prompt)   # first feedback trial index (1..∞)&amp;#10;#do_prompting = False" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="# start counting trials&amp;#10;&amp;#10;#trial_idx += 1&amp;#10;#do_prompting = (trial_idx == next_prompt_at)&amp;#10;#if do_prompting:&amp;#10;    # schedule the *next* prompting trial by adding another random gap&amp;#10;    #next_prompt_at += np.random.geometric(p_prompt)&amp;#10;&amp;#10;    " valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="prompt_positions_dir = [&quot;left&quot;, &quot;right&quot;];&amp;#10;if ((switch_sides === 0)) {&amp;#10;    nonmatch_key_idx = 1;&amp;#10;}&amp;#10;if ((switch_sides === 1)) {&amp;#10;    nonmatch_key_idx = util.index(prompt_positions_dir, nonmatch_pres_side);&amp;#10;}&amp;#10;nonmatch_key = possible_keys[nonmatch_key_idx];&amp;#10;match_key_idx = (1 - nonmatch_key_idx);&amp;#10;match_key = possible_keys[match_key_idx];&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="&amp;#10;# positions&amp;#10;prompt_positions_dir = [&quot;left&quot;, &quot;right&quot;]&amp;#10;&amp;#10;if switch_sides == 0: &amp;#10;    nonmatch_key_idx = 1 # match is always on the right&amp;#10;    &amp;#10;if switch_sides == 1: &amp;#10;    nonmatch_key_idx = prompt_positions_dir.index(nonmatch_pres_side)&amp;#10;&amp;#10;# nonmatch_prpt_position = possible_prompt_positions[nonmatch_idx]  &amp;#10;nonmatch_key = possible_keys[nonmatch_key_idx]&amp;#10;# match_prpt_position = possible_prompt_positions[~nonmatch_idx] &amp;#10;match_key_idx = 1 - nonmatch_key_idx&amp;#10;match_key = possible_keys[match_key_idx]&amp;#10;&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -1681,87 +1477,8 @@
         <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="setup_prompting_2" valType="code" updates="None" name="name"/>
+        <Param val="set_matchside" valType="code" updates="None" name="name"/>
       </CodeComponent>
-    </Routine>
-    <Routine name="prompting">
-      <RoutineSettingsComponent name="prompting" plugin="None">
-        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
-        <Param val="" valType="str" updates="None" name="backgroundImg"/>
-        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
-        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
-        <Param val="" valType="str" updates="constant" name="desc"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
-        <Param val="prompting" valType="code" updates="None" name="name"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="" valType="code" updates="constant" name="skipIf"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
-      </RoutineSettingsComponent>
-      <CodeComponent name="control_routine_start" plugin="None">
-        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="if ((prompt_idx === 0)) {&amp;#10;    continueRoutine = false;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="if prompt_idx==0:&amp;#10;    continueRoutine = False  # skip this routine when not selected" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="control_routine_start" valType="code" updates="None" name="name"/>
-      </CodeComponent>
-      <CodeComponent name="set_matchprompt" plugin="None">
-        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="if ((language === &quot;english&quot;)) {&amp;#10;    match_prompt.text = &quot;match?&quot;;&amp;#10;} else {&amp;#10;    if ((language === &quot;german&quot;)) {&amp;#10;        match_prompt.text = &quot;richtig?&quot;;&amp;#10;    }&amp;#10;}&amp;#10;prompt_positions_dir = [&quot;left&quot;, &quot;right&quot;];&amp;#10;if ((switch_sides === 0)) {&amp;#10;    nonmatch_idx = 1;&amp;#10;}&amp;#10;if ((switch_sides === 1)) {&amp;#10;    nonmatch_idx = util.index(prompt_positions_dir, nonmatch_pres_side);&amp;#10;}&amp;#10;nonmatch_key = possible_keys[nonmatch_idx];&amp;#10;match_key = possible_keys[(~ nonmatch_idx)];&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="&amp;#10;# labels &amp;#10;if language == &quot;english&quot;: &amp;#10;    match_prompt.text = &quot;match?&quot;&amp;#10;elif language == &quot;german&quot;: &amp;#10;    match_prompt.text = &quot;richtig?&quot;&amp;#10;    &amp;#10;# positions&amp;#10;prompt_positions_dir = [&quot;left&quot;, &quot;right&quot;]&amp;#10;&amp;#10;if switch_sides == 0: &amp;#10;    nonmatch_idx = 1 # match is always right&amp;#10;    &amp;#10;if switch_sides == 1: &amp;#10;    nonmatch_idx = prompt_positions_dir.index(nonmatch_pres_side)&amp;#10;&amp;#10;nonmatch_key = possible_keys[nonmatch_idx]&amp;#10;match_key = possible_keys[~nonmatch_idx]&amp;#10;&amp;#10;&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="set_matchprompt" valType="code" updates="None" name="name"/>
-      </CodeComponent>
-      <TextComponent name="match_prompt" plugin="None">
-        <Param val="white" valType="color" updates="constant" name="color"/>
-        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
-        <Param val="1" valType="num" updates="constant" name="contrast"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="False" valType="code" updates="constant" name="draggable"/>
-        <Param val="1.5" valType="code" updates="None" name="durationEstim"/>
-        <Param val="None" valType="str" updates="constant" name="flip"/>
-        <Param val="Arial" valType="str" updates="constant" name="font"/>
-        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
-        <Param val="0.04" valType="num" updates="constant" name="letterHeight"/>
-        <Param val="match_prompt" valType="code" updates="None" name="name"/>
-        <Param val="" valType="num" updates="constant" name="opacity"/>
-        <Param val="0" valType="num" updates="constant" name="ori"/>
-        <Param val="0,0" valType="list" updates="constant" name="pos"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="0" valType="code" updates="None" name="startVal"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="side_dur" valType="code" updates="constant" name="stopVal"/>
-        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="" valType="str" updates="constant" name="text"/>
-        <Param val="from exp settings" valType="str" updates="None" name="units"/>
-        <Param val="" valType="code" updates="None" name="validator"/>
-        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
-      </TextComponent>
       <CodeComponent name="allowed_keys" plugin="None">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
@@ -1785,8 +1502,8 @@
         <Param val="" valType="str" updates="None" name="deviceLabel"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="True" valType="bool" updates="constant" name="discard previous"/>
-        <Param val="1.5" valType="code" updates="None" name="durationEstim"/>
-        <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
+        <Param val="1.25" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="bool" updates="constant" name="forceEndRoutine"/>
         <Param val="key_resp" valType="code" updates="None" name="name"/>
         <Param val="release" valType="str" updates="constant" name="registerOn"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
@@ -1807,14 +1524,31 @@
         <Param val="key_resp.keys = null;&amp;#10;key_resp.corr = null;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
         <Param val="&amp;#10;# reset key resp and correct answer&amp;#10;key_resp.keys = None&amp;#10;key_resp.corr = None &amp;#10;&amp;#10;&amp;#10;&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="if match_responses == 1: &amp;#10;&amp;#10;    if match_idx == 1:&amp;#10;        answer_correct = match_key&amp;#10;    else:  # match_idx == 0&amp;#10;        answer_correct = nonmatch_key&amp;#10;    # Evaluate participant response&amp;#10;    if key_resp.keys is None:&amp;#10;        key_resp.corr = &quot;m&quot;   # no response&amp;#10;    elif key_resp.keys == answer_correct:&amp;#10;        key_resp.corr = 1      # correct response&amp;#10;    else:&amp;#10;        key_resp.corr = 0      # wrong key&amp;#10;        &amp;#10;    &amp;#10;if match_responses == 0: &amp;#10;    &amp;#10;    if match_idx == 1:&amp;#10;        answer_correct = None&amp;#10;    else:  # match_idx == 0&amp;#10;        answer_correct = nonmatch_key&amp;#10;&amp;#10;    # Evaluate participant response  &amp;#10;    if key_resp.keys == answer_correct:&amp;#10;        key_resp.corr = 1      # correct response&amp;#10;    else:&amp;#10;        key_resp.corr = 0      # wrong key&amp;#10;        " valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="if ((match_responses === 1)) {&amp;#10;    if ((match_idx === 1)) {&amp;#10;        answer_correct = match_key;&amp;#10;    } else {&amp;#10;        answer_correct = nonmatch_key;&amp;#10;    }&amp;#10;    if ((key_resp.keys === null)) {&amp;#10;        key_resp.corr = &quot;m&quot;;&amp;#10;    } else {&amp;#10;        if ((key_resp.keys === answer_correct)) {&amp;#10;            key_resp.corr = 1;&amp;#10;        } else {&amp;#10;            key_resp.corr = 0;&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;if ((match_responses === 0)) {&amp;#10;    if ((match_idx === 1)) {&amp;#10;        answer_correct = null;&amp;#10;    } else {&amp;#10;        answer_correct = nonmatch_key;&amp;#10;    }&amp;#10;    if ((key_resp.keys === answer_correct)) {&amp;#10;        key_resp.corr = 1;&amp;#10;    } else {&amp;#10;        key_resp.corr = 0;&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="if ((match_responses === 1)) {&amp;#10;    if ((match_idx === 1)) {&amp;#10;        answer_correct = match_key;&amp;#10;    } else {&amp;#10;        answer_correct = nonmatch_key;&amp;#10;    }&amp;#10;    if ((key_resp.keys === null)) {&amp;#10;        key_resp.corr = &quot;m&quot;;&amp;#10;    } else {&amp;#10;        if ((key_resp.keys === answer_correct)) {&amp;#10;            key_resp.corr = 1;&amp;#10;        } else {&amp;#10;            key_resp.corr = 0;&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;if ((match_responses === 0)) {&amp;#10;    if ((match_idx === 1)) {&amp;#10;        answer_correct = null;&amp;#10;    } else {&amp;#10;        answer_correct = nonmatch_key;&amp;#10;    }&amp;#10;    if ((key_resp.keys === answer_correct)) {&amp;#10;        key_resp.corr = 1;&amp;#10;    } else {&amp;#10;        key_resp.corr = 0;&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="if match_responses == 1: &amp;#10;&amp;#10;    if match_idx == 1:&amp;#10;        answer_correct = match_key&amp;#10;    else:  # match_idx == 0&amp;#10;        answer_correct = nonmatch_key&amp;#10;&amp;#10;    # Evaluate participant response&amp;#10;    if key_resp.keys is None:&amp;#10;        key_resp.corr = &quot;m&quot;   # no response&amp;#10;    elif key_resp.keys == answer_correct:&amp;#10;        key_resp.corr = 1      # correct response&amp;#10;    else:&amp;#10;        key_resp.corr = 0      # wrong key&amp;#10;        &amp;#10;    &amp;#10;if match_responses == 0: &amp;#10;    &amp;#10;    if match_idx == 1:&amp;#10;        answer_correct = None&amp;#10;    else:  # match_idx == 0&amp;#10;        answer_correct = nonmatch_key&amp;#10;&amp;#10;    # Evaluate participant response  &amp;#10;    if key_resp.keys == answer_correct:&amp;#10;        key_resp.corr = 1      # correct response&amp;#10;    else:&amp;#10;        key_resp.corr = 0      # wrong key&amp;#10;        &amp;#10;" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="code_key_resp" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+      <CodeComponent name="feedback_control" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="feedback_given = false;&amp;#10;show_until = null;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="&amp;#10;# prepare feedback in form of word color change or too slow message&amp;#10;feedback_given = False&amp;#10;show_until = None" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="if fdback == 1: &amp;#10;    if (key_resp.keys is not None) and (not feedback_given):&amp;#10;        &amp;#10;        if key_resp.corr==1:&amp;#10;            #too_slow_msg.setOpacity(0)&amp;#10;            fix_cross.setColor(&quot;green&quot;)&amp;#10;      &amp;#10;        elif key_resp.corr==0: &amp;#10;            #too_slow_msg.setOpacity(0)&amp;#10;            fix_cross.setColor(&quot;red&quot;)&amp;#10;        feedback_given = True&amp;#10;        show_until = t + 0.2&amp;#10; &amp;#10;    if (not key_resp.keys) and (not feedback_given) and (t &gt;= response_time): # no respnse &amp;#10;        print(&quot;no response given&quot;)&amp;#10;        #too_slow_msg.setOpacity(1)&amp;#10;        fix_cross.setColor(&quot;red&quot;)&amp;#10;        feedback_given = True&amp;#10;        show_until = t + 0.2&amp;#10;        &amp;#10;    if feedback_given and (t &gt;= show_until):&amp;#10;        continueRoutine = False   &amp;#10;        &amp;#10;else:  # if no feedback is desired&amp;#10;    #too_slow_msg.setOpacity(0)&amp;#10;    if (key_resp.keys is not None) or (t &gt;= response_time):&amp;#10;        continueRoutine = False&amp;#10;" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="if ((fdback === 1)) {&amp;#10;    if (((key_resp.keys !== null) &amp;&amp; (! feedback_given))) {&amp;#10;        if ((key_resp.corr === 1)) {&amp;#10;            fix_cross.setColor(&quot;green&quot;);&amp;#10;        } else {&amp;#10;            if ((key_resp.corr === 0)) {&amp;#10;                fix_cross.setColor(&quot;red&quot;);&amp;#10;            }&amp;#10;        }&amp;#10;        feedback_given = true;&amp;#10;        show_until = (t + 0.2);&amp;#10;    }&amp;#10;    if ((((! key_resp.keys) &amp;&amp; (! feedback_given)) &amp;&amp; (t &gt;= response_time))) {&amp;#10;        console.log(&quot;no response given&quot;);&amp;#10;        fix_cross.setColor(&quot;red&quot;);&amp;#10;        feedback_given = true;&amp;#10;        show_until = (t + 0.2);&amp;#10;    }&amp;#10;    if ((feedback_given &amp;&amp; (t &gt;= show_until))) {&amp;#10;        continueRoutine = false;&amp;#10;    }&amp;#10;} else {&amp;#10;    if (((key_resp.keys !== null) || (t &gt;= response_time))) {&amp;#10;        continueRoutine = false;&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="feedback_control" valType="code" updates="None" name="name"/>
       </CodeComponent>
       <CodeComponent name="bids_resp_logging" plugin="None">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
@@ -1824,12 +1558,12 @@
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="# log onset at first frame&amp;#10;&amp;#10;bids.schedule_onset(match_prompt,&amp;#10;                        block_num = block_num,&amp;#10;                        trial_num = trial_num,&amp;#10;                        type_of_stimulus=&quot;prompt to respond&quot;,&amp;#10;                        component_label=&quot;nonmatch_side&quot;)&amp;#10;" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="bids.schedule_onset(match_prompt, {&quot;block_num&quot;: block_num, &quot;trial_num&quot;: trial_num, &quot;type_of_stimulus&quot;: &quot;prompt to respond&quot;, &quot;component_label&quot;: &quot;nonmatch_side&quot;});&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="&amp;#10;&amp;#10;" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="bids.add_instant(&quot;response&quot;, {&quot;response&quot;: (key_resp.keys ? key_resp.keys : null), &quot;response_time&quot;: ((&quot;rt&quot; in key_resp) ? key_resp.rt : null), &quot;correct&quot;: ((&quot;corr&quot; in key_resp) ? key_resp.corr : &quot;m&quot;), &quot;expected_response&quot;: answer_correct, &quot;block_num&quot;: block_num, &quot;trial_num&quot;: trial_num, &quot;component_label&quot;: &quot;button_pressed&quot;});&amp;#10;bids.mark_offset(match_prompt);&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="# response neeeds to be saved at end of trial&amp;#10;bids.add_instant(&amp;#10;    &quot;response&quot;,&amp;#10;    response=(key_resp.keys if key_resp.keys else None),&amp;#10;    response_time=(key_resp.rt if hasattr(key_resp, &quot;rt&quot;) else None),&amp;#10;    correct=(key_resp.corr if hasattr(key_resp, &quot;corr&quot;) else &quot;m&quot;),&amp;#10;    expected_response = answer_correct,&amp;#10;    block_num = block_num,&amp;#10;    trial_num = trial_num,&amp;#10;    component_label = &quot;button_pressed&quot;&amp;#10;)&amp;#10;&amp;#10;bids.mark_offset(match_prompt)" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="bids.add_instant(&quot;response&quot;, {&quot;response&quot;: (key_resp.keys ? key_resp.keys : null), &quot;response_time&quot;: ((&quot;rt&quot; in key_resp) ? key_resp.rt : null), &quot;correct&quot;: ((&quot;corr&quot; in key_resp) ? key_resp.corr : &quot;m&quot;), &quot;expected_response&quot;: answer_correct, &quot;block_num&quot;: block_num, &quot;trial_num&quot;: trial_num, &quot;component_label&quot;: &quot;button_pressed&quot;});&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="# response neeeds to be saved at end of trial&amp;#10;bids.add_instant(&amp;#10;    &quot;response&quot;,&amp;#10;    response=(key_resp.keys if key_resp.keys else None),&amp;#10;    response_time=(key_resp.rt if hasattr(key_resp, &quot;rt&quot;) else None),&amp;#10;    correct=(key_resp.corr if hasattr(key_resp, &quot;corr&quot;) else &quot;m&quot;),&amp;#10;    expected_response = answer_correct,&amp;#10;    block_num = block_num,&amp;#10;    trial_num = trial_num,&amp;#10;    component_label = &quot;button_pressed&quot;&amp;#10;)&amp;#10;&amp;#10;" valType="extendedCode" updates="constant" name="End Routine"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="bids_resp_logging" valType="code" updates="None" name="name"/>
       </CodeComponent>
@@ -1873,8 +1607,8 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="if ((language === &quot;english&quot;)) {&amp;#10;    word_shown = word_shown_english;&amp;#10;} else {&amp;#10;    if ((language === &quot;german&quot;)) {&amp;#10;        word_part1 = word_shown_german;&amp;#10;        word_part2 = &quot;_german&quot;;&amp;#10;        word_shown = (word_part1 + word_part2);&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="&amp;#10;&amp;#10;if language == 'english':&amp;#10;    word_shown = (word_shown_english)&amp;#10;    &amp;#10;elif language == 'german':   &amp;#10;    word_part1 = (word_shown_german)&amp;#10;    word_part2 = &quot;_german&quot;&amp;#10;    word_shown = word_part1 + word_part2&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="if ((language === &quot;english&quot;)) {&amp;#10;    part1 = word_shown_english;&amp;#10;    part2 = &quot;_english&quot;;&amp;#10;    word_shown = (part1 + part2);&amp;#10;} else {&amp;#10;    if ((language === &quot;german&quot;)) {&amp;#10;        word_shown = word_shown_german;&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="&amp;#10;&amp;#10;if language == 'english':&amp;#10;    part1 = (word_shown_english)&amp;#10;    part2 = &quot;_english&quot;&amp;#10;    word_shown = part1 + part2&amp;#10;&amp;#10;    &amp;#10;elif language == 'german':   &amp;#10;    word_shown = (word_shown_german)&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -1888,11 +1622,14 @@
       <SoundComponent name="spoken_word_prc" plugin="None">
         <Param val="" valType="str" updates="None" name="deviceLabel"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="0.75" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="bool" updates="constant" name="forceEndRoutine"/>
         <Param val="True" valType="bool" updates="constant" name="hamming"/>
+        <Param val="1" valType="code" updates="None" name="latencyClass"/>
         <Param val="spoken_word_prc" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="str" updates="None" name="resample"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="$ &quot;sounds//&quot; + word_shown + &quot;.mp3&quot;" valType="str" updates="set every repeat" name="sound"/>
+        <Param val="$ &quot;sounds//&quot; + word_shown + &quot;.wav&quot;" valType="str" updates="set every repeat" name="sound"/>
         <Param val="-1" valType="code" updates="None" name="speakerIndex"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
@@ -1901,20 +1638,21 @@
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="constant" name="stopWithRoutine"/>
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="1" valType="num" updates="constant" name="volume"/>
       </SoundComponent>
-      <TextComponent name="fix_cross_3" plugin="None">
-        <Param val="white" valType="color" updates="constant" name="color"/>
+      <TextComponent name="fix_cross_prc" plugin="None">
+        <Param val="white" valType="color" updates="set every repeat" name="color"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
         <Param val="1" valType="num" updates="constant" name="contrast"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="False" valType="code" updates="constant" name="draggable"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="response_time" valType="code" updates="None" name="durationEstim"/>
         <Param val="None" valType="str" updates="constant" name="flip"/>
         <Param val="Arial" valType="str" updates="constant" name="font"/>
         <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
         <Param val="0.08" valType="num" updates="constant" name="letterHeight"/>
-        <Param val="fix_cross_3" valType="code" updates="None" name="name"/>
+        <Param val="fix_cross_prc" valType="code" updates="None" name="name"/>
         <Param val="" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
         <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
@@ -1930,48 +1668,13 @@
         <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
-      <CodeComponent name="control_routine_length_prc" plugin="None">
+      <CodeComponent name="set_matchside_prc" plugin="None">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="if spoken_word_prc.status == FINISHED:&amp;#10;    continueRoutine = False" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="if ((spoken_word_prc.status === PsychoJS.Status.FINISHED)) {&amp;#10;    continueRoutine = false;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="control_routine_length_prc" valType="code" updates="None" name="name"/>
-      </CodeComponent>
-    </Routine>
-    <Routine name="prompting_prc">
-      <RoutineSettingsComponent name="prompting_prc" plugin="None">
-        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
-        <Param val="" valType="str" updates="None" name="backgroundImg"/>
-        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
-        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
-        <Param val="" valType="str" updates="constant" name="desc"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
-        <Param val="prompting_prc" valType="code" updates="None" name="name"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="" valType="code" updates="constant" name="skipIf"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
-      </RoutineSettingsComponent>
-      <CodeComponent name="control_routine_start_prc" plugin="None">
-        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="var _pj;&amp;#10;function _pj_snippets(container) {&amp;#10;    function in_es6(left, right) {&amp;#10;        if (((right instanceof Array) || ((typeof right) === &quot;string&quot;))) {&amp;#10;            return (right.indexOf(left) &gt; (- 1));&amp;#10;        } else {&amp;#10;            if (((right instanceof Map) || (right instanceof Set) || (right instanceof WeakMap) || (right instanceof WeakSet))) {&amp;#10;                return right.has(left);&amp;#10;            } else {&amp;#10;                return (left in right);&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;    container[&quot;in_es6&quot;] = in_es6;&amp;#10;    return container;&amp;#10;}&amp;#10;_pj = {};&amp;#10;_pj_snippets(_pj);&amp;#10;if ((! _pj.in_es6(trials_practice.thisN, prompting_trials_prc))) {&amp;#10;    continueRoutine = false;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="if trials_practice.thisN not in prompting_trials_prc:&amp;#10;    continueRoutine = False  # skip this routine when not selected" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="prompt_positions_dir = [&quot;left&quot;, &quot;right&quot;];&amp;#10;if ((switch_sides === 0)) {&amp;#10;    nonmatch_key_idx = 1;&amp;#10;}&amp;#10;if ((switch_sides === 1)) {&amp;#10;    nonmatch_key_idx = util.index(prompt_positions_dir, nonmatch_pres_side);&amp;#10;}&amp;#10;nonmatch_key = possible_keys[nonmatch_key_idx];&amp;#10;match_key_idx = (1 - nonmatch_key_idx);&amp;#10;match_key = possible_keys[match_key_idx];&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="&amp;#10;# positions&amp;#10;prompt_positions_dir = [&quot;left&quot;, &quot;right&quot;]&amp;#10;&amp;#10;if switch_sides == 0: &amp;#10;    nonmatch_key_idx = 1 # match is always on the right&amp;#10;    &amp;#10;if switch_sides == 1: &amp;#10;    nonmatch_key_idx = prompt_positions_dir.index(nonmatch_pres_side)&amp;#10;&amp;#10;# nonmatch_prpt_position = possible_prompt_positions[nonmatch_idx]  &amp;#10;nonmatch_key = possible_keys[nonmatch_key_idx]&amp;#10;# match_prpt_position = possible_prompt_positions[~nonmatch_idx] &amp;#10;match_key_idx = 1 - nonmatch_key_idx&amp;#10;match_key = possible_keys[match_key_idx]&amp;#10;&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -1980,52 +1683,8 @@
         <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="control_routine_start_prc" valType="code" updates="None" name="name"/>
+        <Param val="set_matchside_prc" valType="code" updates="None" name="name"/>
       </CodeComponent>
-      <CodeComponent name="set_matchprompt_prc" plugin="None">
-        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="if ((language === &quot;english&quot;)) {&amp;#10;    match_prompt_prc.text = &quot;match?&quot;;&amp;#10;} else {&amp;#10;    if ((language === &quot;german&quot;)) {&amp;#10;        match_prompt_prc.text = &quot;richtig?&quot;;&amp;#10;    }&amp;#10;}&amp;#10;prompt_positions_dir = [&quot;left&quot;, &quot;right&quot;];&amp;#10;if ((switch_sides === 0)) {&amp;#10;    nonmatch_idx = 1;&amp;#10;}&amp;#10;if ((switch_sides === 1)) {&amp;#10;    nonmatch_idx = util.index(prompt_positions_dir, nonmatch_pres_side);&amp;#10;}&amp;#10;nonmatch_key = possible_keys[nonmatch_idx];&amp;#10;match_key = possible_keys[(~ nonmatch_idx)];&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="&amp;#10;# labels &amp;#10;if language == &quot;english&quot;: &amp;#10;    match_prompt_prc.text = &quot;match?&quot;&amp;#10;elif language == &quot;german&quot;: &amp;#10;    match_prompt_prc.text = &quot;richtig?&quot;&amp;#10;    &amp;#10;# positions&amp;#10;prompt_positions_dir = [&quot;left&quot;, &quot;right&quot;]&amp;#10;&amp;#10;if switch_sides == 0: &amp;#10;    nonmatch_idx = 1 # match is always right&amp;#10;    &amp;#10;if switch_sides == 1: &amp;#10;    nonmatch_idx = prompt_positions_dir.index(nonmatch_pres_side)&amp;#10;&amp;#10;nonmatch_key = possible_keys[nonmatch_idx]&amp;#10;match_key = possible_keys[~nonmatch_idx]&amp;#10;&amp;#10;&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="set_matchprompt_prc" valType="code" updates="None" name="name"/>
-      </CodeComponent>
-      <TextComponent name="match_prompt_prc" plugin="None">
-        <Param val="white" valType="color" updates="constant" name="color"/>
-        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
-        <Param val="1" valType="num" updates="constant" name="contrast"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="False" valType="code" updates="constant" name="draggable"/>
-        <Param val="1.5" valType="code" updates="None" name="durationEstim"/>
-        <Param val="None" valType="str" updates="constant" name="flip"/>
-        <Param val="Arial" valType="str" updates="constant" name="font"/>
-        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
-        <Param val="0.04" valType="num" updates="constant" name="letterHeight"/>
-        <Param val="match_prompt_prc" valType="code" updates="None" name="name"/>
-        <Param val="" valType="num" updates="constant" name="opacity"/>
-        <Param val="0" valType="num" updates="constant" name="ori"/>
-        <Param val="0,0" valType="list" updates="constant" name="pos"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="0" valType="code" updates="None" name="startVal"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="side_dur" valType="code" updates="constant" name="stopVal"/>
-        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="" valType="str" updates="constant" name="text"/>
-        <Param val="from exp settings" valType="str" updates="None" name="units"/>
-        <Param val="" valType="code" updates="None" name="validator"/>
-        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
-      </TextComponent>
       <CodeComponent name="allowed_keys_prc" plugin="None">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
@@ -2049,8 +1708,8 @@
         <Param val="" valType="str" updates="None" name="deviceLabel"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="True" valType="bool" updates="constant" name="discard previous"/>
-        <Param val="1.5" valType="code" updates="None" name="durationEstim"/>
-        <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
+        <Param val="1.25" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="bool" updates="constant" name="forceEndRoutine"/>
         <Param val="key_resp_prc" valType="code" updates="None" name="name"/>
         <Param val="release" valType="str" updates="constant" name="registerOn"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
@@ -2071,154 +1730,31 @@
         <Param val="key_resp_prc.keys = null;&amp;#10;key_resp_prc.corr = null;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
         <Param val="&amp;#10;# reset key resp and correct answer&amp;#10;key_resp_prc.keys = None&amp;#10;key_resp_prc.corr = None &amp;#10;&amp;#10;&amp;#10;&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="if match_responses == 1: &amp;#10;&amp;#10;    if match_idx == 1:&amp;#10;        answer_correct = match_key&amp;#10;    else:  # match_idx == 0&amp;#10;        answer_correct = nonmatch_key&amp;#10;    # Evaluate participant response&amp;#10;    if key_resp_prc.keys is None:&amp;#10;        key_resp_prc.corr = &quot;m&quot;   # no response&amp;#10;    elif key_resp_prc.keys == answer_correct:&amp;#10;        key_resp_prc.corr = 1      # correct response&amp;#10;    else:&amp;#10;        key_resp_prc.corr = 0      # wrong key&amp;#10;        &amp;#10;    &amp;#10;if match_responses == 0: &amp;#10;    &amp;#10;    if match_idx == 1:&amp;#10;        answer_correct = None&amp;#10;    else:  # match_idx == 0&amp;#10;        answer_correct = nonmatch_key&amp;#10;&amp;#10;    # Evaluate participant response  &amp;#10;    if key_resp_prc.keys == answer_correct:&amp;#10;        key_resp_prc.corr = 1      # correct response&amp;#10;    else:&amp;#10;        key_resp_prc.corr = 0      # wrong key&amp;#10;        " valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="if ((match_responses === 1)) {&amp;#10;    if ((match_idx === 1)) {&amp;#10;        answer_correct = match_key;&amp;#10;    } else {&amp;#10;        answer_correct = nonmatch_key;&amp;#10;    }&amp;#10;    if ((key_resp_prc.keys === null)) {&amp;#10;        key_resp_prc.corr = &quot;m&quot;;&amp;#10;    } else {&amp;#10;        if ((key_resp_prc.keys === answer_correct)) {&amp;#10;            key_resp_prc.corr = 1;&amp;#10;        } else {&amp;#10;            key_resp_prc.corr = 0;&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;if ((match_responses === 0)) {&amp;#10;    if ((match_idx === 1)) {&amp;#10;        answer_correct = null;&amp;#10;    } else {&amp;#10;        answer_correct = nonmatch_key;&amp;#10;    }&amp;#10;    if ((key_resp_prc.keys === answer_correct)) {&amp;#10;        key_resp_prc.corr = 1;&amp;#10;    } else {&amp;#10;        key_resp_prc.corr = 0;&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="if ((match_responses === 1)) {&amp;#10;    if ((match_idx === 1)) {&amp;#10;        answer_correct = match_key;&amp;#10;    } else {&amp;#10;        answer_correct = nonmatch_key;&amp;#10;    }&amp;#10;    if ((key_resp_prc.keys === null)) {&amp;#10;        key_resp_prc.corr = &quot;m&quot;;&amp;#10;    } else {&amp;#10;        if ((key_resp_prc.keys === answer_correct)) {&amp;#10;            key_resp_prc.corr = 1;&amp;#10;        } else {&amp;#10;            key_resp_prc.corr = 0;&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;if ((match_responses === 0)) {&amp;#10;    if ((match_idx === 1)) {&amp;#10;        answer_correct = null;&amp;#10;    } else {&amp;#10;        answer_correct = nonmatch_key;&amp;#10;    }&amp;#10;    if ((key_resp_prc.keys === answer_correct)) {&amp;#10;        key_resp_prc.corr = 1;&amp;#10;    } else {&amp;#10;        key_resp_prc.corr = 0;&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="if match_responses == 1: &amp;#10;&amp;#10;    if match_idx == 1:&amp;#10;        answer_correct = match_key&amp;#10;    else:  # match_idx == 0&amp;#10;        answer_correct = nonmatch_key&amp;#10;&amp;#10;    # Evaluate participant response&amp;#10;    if key_resp_prc.keys is None:&amp;#10;        key_resp_prc.corr = &quot;m&quot;   # no response&amp;#10;    elif key_resp_prc.keys == answer_correct:&amp;#10;        key_resp_prc.corr = 1      # correct response&amp;#10;    else:&amp;#10;        key_resp_prc.corr = 0      # wrong key&amp;#10;        &amp;#10;    &amp;#10;if match_responses == 0: &amp;#10;    &amp;#10;    if match_idx == 1:&amp;#10;        answer_correct = None&amp;#10;    else:  # match_idx == 0&amp;#10;        answer_correct = nonmatch_key&amp;#10;&amp;#10;    # Evaluate participant response  &amp;#10;    if key_resp_prc.keys == answer_correct:&amp;#10;        key_resp_prc.corr = 1      # correct response&amp;#10;    else:&amp;#10;        key_resp_prc.corr = 0      # wrong key&amp;#10;        &amp;#10;" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="code_key_resp_prc" valType="code" updates="None" name="name"/>
       </CodeComponent>
-    </Routine>
-    <Routine name="feedback_prc">
-      <RoutineSettingsComponent name="feedback_prc" plugin="None">
-        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
-        <Param val="" valType="str" updates="None" name="backgroundImg"/>
-        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
-        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
-        <Param val="" valType="str" updates="constant" name="desc"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
-        <Param val="feedback_prc" valType="code" updates="None" name="name"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="" valType="code" updates="constant" name="skipIf"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
-      </RoutineSettingsComponent>
-      <CodeComponent name="control_routine_start_prc_2" plugin="None">
+      <CodeComponent name="feedback_control_2" plugin="None">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="var _pj;&amp;#10;function _pj_snippets(container) {&amp;#10;    function in_es6(left, right) {&amp;#10;        if (((right instanceof Array) || ((typeof right) === &quot;string&quot;))) {&amp;#10;            return (right.indexOf(left) &gt; (- 1));&amp;#10;        } else {&amp;#10;            if (((right instanceof Map) || (right instanceof Set) || (right instanceof WeakMap) || (right instanceof WeakSet))) {&amp;#10;                return right.has(left);&amp;#10;            } else {&amp;#10;                return (left in right);&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;    container[&quot;in_es6&quot;] = in_es6;&amp;#10;    return container;&amp;#10;}&amp;#10;_pj = {};&amp;#10;_pj_snippets(_pj);&amp;#10;if ((! _pj.in_es6(trials_practice.thisN, prompting_trials_prc))) {&amp;#10;    continueRoutine = false;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="if trials_practice.thisN not in prompting_trials_prc:&amp;#10;    continueRoutine = False  &amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="feedback_given = false;&amp;#10;show_until = null;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="&amp;#10;# prepare feedback in form of word color change or too slow message&amp;#10;feedback_given = False&amp;#10;show_until = None" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="if fdback == 1: &amp;#10;    if (key_resp_prc.keys is not None) and (not feedback_given):&amp;#10;        &amp;#10;        if key_resp_prc.corr==1:&amp;#10;            #too_slow_msg.setOpacity(0)&amp;#10;            fix_cross_prc.setColor(&quot;green&quot;)&amp;#10;      &amp;#10;        elif key_resp_prc.corr==0: &amp;#10;            #too_slow_msg.setOpacity(0)&amp;#10;            fix_cross_prc.setColor(&quot;red&quot;)&amp;#10;        feedback_given = True&amp;#10;        show_until = t + 0.2&amp;#10; &amp;#10;    if (not key_resp_prc.keys) and (not feedback_given) and (t &gt;= response_time): # no respnse &amp;#10;        #too_slow_msg.setOpacity(1)&amp;#10;        fix_cross_prc.setColor(&quot;red&quot;)&amp;#10;        feedback_given = True&amp;#10;        show_until = t + 0.2&amp;#10;        &amp;#10;    if feedback_given and (t &gt;= show_until):&amp;#10;        continueRoutine = False   &amp;#10;        &amp;#10;else:  # if no feedback is desired&amp;#10;    #too_slow_msg.setOpacity(0)&amp;#10;    if (key_resp_prc.keys is not None) or (t &gt;= response_time):&amp;#10;        continueRoutine = False&amp;#10;" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="if ((fdback === 1)) {&amp;#10;    if (((key_resp_prc.keys !== null) &amp;&amp; (! feedback_given))) {&amp;#10;        if ((key_resp_prc.corr === 1)) {&amp;#10;            fix_cross_prc.setColor(&quot;green&quot;);&amp;#10;        } else {&amp;#10;            if ((key_resp_prc.corr === 0)) {&amp;#10;                fix_cross_prc.setColor(&quot;red&quot;);&amp;#10;            }&amp;#10;        }&amp;#10;        feedback_given = true;&amp;#10;        show_until = (t + 0.2);&amp;#10;    }&amp;#10;    if ((((! key_resp_prc.keys) &amp;&amp; (! feedback_given)) &amp;&amp; (t &gt;= response_time))) {&amp;#10;        fix_cross_prc.setColor(&quot;red&quot;);&amp;#10;        feedback_given = true;&amp;#10;        show_until = (t + 0.2);&amp;#10;    }&amp;#10;    if ((feedback_given &amp;&amp; (t &gt;= show_until))) {&amp;#10;        continueRoutine = false;&amp;#10;    }&amp;#10;} else {&amp;#10;    if (((key_resp_prc.keys !== null) || (t &gt;= response_time))) {&amp;#10;        continueRoutine = false;&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="control_routine_start_prc_2" valType="code" updates="None" name="name"/>
-      </CodeComponent>
-      <TextComponent name="match_prompt_fdback_prc" plugin="None">
-        <Param val="" valType="color" updates="constant" name="color"/>
-        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
-        <Param val="1" valType="num" updates="constant" name="contrast"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="False" valType="code" updates="constant" name="draggable"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="None" valType="str" updates="constant" name="flip"/>
-        <Param val="Arial" valType="str" updates="constant" name="font"/>
-        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
-        <Param val="0.04" valType="num" updates="constant" name="letterHeight"/>
-        <Param val="match_prompt_fdback_prc" valType="code" updates="None" name="name"/>
-        <Param val="" valType="num" updates="constant" name="opacity"/>
-        <Param val="0" valType="num" updates="constant" name="ori"/>
-        <Param val="0,0" valType="list" updates="constant" name="pos"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="0" valType="code" updates="None" name="startVal"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="fdback_dur" valType="code" updates="constant" name="stopVal"/>
-        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="" valType="str" updates="constant" name="text"/>
-        <Param val="from exp settings" valType="str" updates="None" name="units"/>
-        <Param val="" valType="code" updates="None" name="validator"/>
-        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
-      </TextComponent>
-      <CodeComponent name="set_matchprompt_fdback_prc" plugin="None">
-        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="if ((language === &quot;english&quot;)) {&amp;#10;    match_prompt_fdback_prc.text = &quot;match?&quot;;&amp;#10;} else {&amp;#10;    if ((language === &quot;german&quot;)) {&amp;#10;        match_prompt_fdback_prc.text = &quot;richtig?&quot;;&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="&amp;#10;# labels &amp;#10;if language == &quot;english&quot;: &amp;#10;    match_prompt_fdback_prc.text = &quot;match?&quot;&amp;#10;elif language == &quot;german&quot;: &amp;#10;    match_prompt_fdback_prc.text = &quot;richtig?&quot;&amp;#10;    &amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="set_matchprompt_fdback_prc" valType="code" updates="None" name="name"/>
-      </CodeComponent>
-      <CodeComponent name="feedback_control_prc" plugin="None">
-        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="feedback_given = false;&amp;#10;if ((fdback === 1)) {&amp;#10;    if ((key_resp_prc.corr === 1)) {&amp;#10;        too_slow_msg_prc.setOpacity(0);&amp;#10;        match_prompt_fdback_prc.setOpacity(1);&amp;#10;        match_prompt_fdback_prc.setColor(&quot;green&quot;, {&quot;colorSpace&quot;: &quot;rgb&quot;});&amp;#10;        feedback_given = true;&amp;#10;    } else {&amp;#10;        if ((key_resp_prc.corr === 0)) {&amp;#10;            too_slow_msg_prc.setOpacity(0);&amp;#10;            match_prompt_fdback_prc.setColor(&quot;red&quot;, {&quot;colorSpace&quot;: &quot;rgb&quot;});&amp;#10;            match_prompt_fdback_prc.setOpacity(1);&amp;#10;            feedback_given = true;&amp;#10;        } else {&amp;#10;            if ((key_resp_prc.corr === &quot;m&quot;)) {&amp;#10;                too_slow_msg_prc.setOpacity(1);&amp;#10;                match_prompt_fdback_prc.setOpacity(0);&amp;#10;                feedback_given = true;&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;} else {&amp;#10;    too_slow_msg_prc.setOpacity(0);&amp;#10;    match_prompt_fdback_prc.setColor(&quot;white&quot;);&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="&amp;#10;# prepare feedback in form of word color change or too slow message&amp;#10;feedback_given = False&amp;#10;&amp;#10;&amp;#10;if fdback == 1: &amp;#10;    if key_resp_prc.corr==1: &amp;#10;        too_slow_msg_prc.setOpacity(0)&amp;#10;        match_prompt_fdback_prc.setOpacity(1)&amp;#10;        match_prompt_fdback_prc.setColor(&quot;green&quot;, colorSpace='rgb')&amp;#10;&amp;#10;        feedback_given = True&amp;#10;&amp;#10;    elif key_resp_prc.corr==0: &amp;#10;        too_slow_msg_prc.setOpacity(0)&amp;#10;&amp;#10;        match_prompt_fdback_prc.setColor(&quot;red&quot;, colorSpace='rgb')&amp;#10;        match_prompt_fdback_prc.setOpacity(1)&amp;#10;&amp;#10;        feedback_given = True&amp;#10;&amp;#10;        &amp;#10;    elif key_resp_prc.corr== &quot;m&quot;: # no respnse &amp;#10;        too_slow_msg_prc.setOpacity(1)&amp;#10;        match_prompt_fdback_prc.setOpacity(0)&amp;#10;&amp;#10;        feedback_given = True&amp;#10;        &amp;#10;else:  # if no feedback is desired&amp;#10;    too_slow_msg_prc.setOpacity(0)&amp;#10;    match_prompt_fdback_prc.setColor(&quot;white&quot;)&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="feedback_control_prc" valType="code" updates="None" name="name"/>
-      </CodeComponent>
-      <TextComponent name="too_slow_msg_prc" plugin="None">
-        <Param val="white" valType="color" updates="constant" name="color"/>
-        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
-        <Param val="1" valType="num" updates="constant" name="contrast"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="False" valType="code" updates="constant" name="draggable"/>
-        <Param val="0.2" valType="code" updates="None" name="durationEstim"/>
-        <Param val="None" valType="str" updates="constant" name="flip"/>
-        <Param val="Arial" valType="str" updates="constant" name="font"/>
-        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
-        <Param val="0.04" valType="num" updates="constant" name="letterHeight"/>
-        <Param val="too_slow_msg_prc" valType="code" updates="None" name="name"/>
-        <Param val="" valType="num" updates="constant" name="opacity"/>
-        <Param val="0" valType="num" updates="constant" name="ori"/>
-        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="0.0" valType="code" updates="None" name="startVal"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="fdback_dur" valType="code" updates="constant" name="stopVal"/>
-        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="" valType="str" updates="constant" name="text"/>
-        <Param val="from exp settings" valType="str" updates="None" name="units"/>
-        <Param val="" valType="code" updates="None" name="validator"/>
-        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
-      </TextComponent>
-      <CodeComponent name="set_too_slow_msg_prc" plugin="None">
-        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="if ((language === &quot;english&quot;)) {&amp;#10;    too_slow_msg_prc.text = &quot;too slow&quot;;&amp;#10;} else {&amp;#10;    if ((language === &quot;german&quot;)) {&amp;#10;        too_slow_msg_prc.text = &quot;zu langsam&quot;;&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="if language == &quot;english&quot;: &amp;#10;    too_slow_msg_prc.text = &quot;too slow&quot;&amp;#10;elif language == &quot;german&quot;: &amp;#10;    too_slow_msg_prc.text = &quot;zu langsam&quot;&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="set_too_slow_msg_prc" valType="code" updates="None" name="name"/>
+        <Param val="feedback_control_2" valType="code" updates="None" name="name"/>
       </CodeComponent>
     </Routine>
     <Routine name="instructions_04">
@@ -2320,6 +1856,41 @@
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
     </Routine>
+    <Routine name="check_megtrig">
+      <RoutineSettingsComponent name="check_megtrig" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="check_megtrig" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <CodeComponent name="code" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="import sys, pkgutil&amp;#10;print(&quot;PYEXE:&quot;, sys.executable)         # PsychoPy's python.exe&amp;#10;print(&quot;First site-packages on path:\n&quot;, &quot;\n&quot;.join(sys.path[:5]))&amp;#10;&amp;#10;# See if either name is visible&amp;#10;print(&quot;has meg_triggers? &quot;, any(m.name == &quot;meg_triggers&quot; for m in pkgutil.iter_modules()))&amp;#10;print(&quot;has cimh_psychopy_meg? &quot;, any(m.name == &quot;cimh_psychopy_meg&quot; for m in pkgutil.iter_modules()))" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="code" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+    </Routine>
   </Routines>
   <Flow>
     <Routine name="settings"/>
@@ -2341,8 +1912,6 @@
     </LoopInitiator>
     <Routine name="image_pres_prc"/>
     <Routine name="sound_pres_prc"/>
-    <Routine name="prompting_prc"/>
-    <Routine name="feedback_prc"/>
     <Routine name="ITI_prc"/>
     <LoopTerminator name="trials_practice"/>
     <Routine name="instructions_startexp"/>
@@ -2357,11 +1926,8 @@
       <Param name="name" updates="None" val="trials" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
-    <Routine name="settings_main_trial"/>
     <Routine name="image_pres"/>
     <Routine name="sound_pres"/>
-    <Routine name="prompting"/>
-    <Routine name="feedback"/>
     <Routine name="ITI"/>
     <Routine name="break_3"/>
     <LoopTerminator name="trials"/>
